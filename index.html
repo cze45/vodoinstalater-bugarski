@@ -1,0 +1,803 @@
+<!doctype html>
+<html lang="sr-Latn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#E4E2DD">
+<meta name="description" content="Koncept dizajna početne stranice za Vodoinstalater Bugarski, Novi Sad. Nije zvanični sajt firme.">
+<title>Vodoinstalater Bugarski · koncept dizajna</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700&amp;family=Red+Hat+Mono:wght@500&amp;family=Red+Hat+Text:wght@400;500;700&amp;display=swap">
+<style>
+html{scroll-behavior:smooth;scroll-padding-top:80px;scroll-padding-bottom:96px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.nav,.callbar,.pg .nav .call-d{transition:none!important}}
+body{margin:0;background:#E4E2DD}
+.pg{container:pg / inline-size;position:relative;background:#E4E2DD;color:#0E1A24;font-family:'Red Hat Text',system-ui,sans-serif;font-size:16px;line-height:24px;overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100%;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:rgba(22,103,196,.14)}
+.pg *,.pg *::before,.pg *::after{box-sizing:border-box}
+.pg::after{content:"";position:absolute;inset:0;z-index:15;pointer-events:none;background-image:url(assets/noise.png);background-size:256px 256px;opacity:.5}
+.pg a,.pg button,.pg input,.pg textarea{touch-action:manipulation}
+.pg p{margin:0;max-width:62ch;text-wrap:pretty}
+.pg a{color:#0E1A24;text-underline-offset:4px}
+.pg a:hover{color:#1667C4}
+.pg :focus-visible{outline:2px solid #1667C4;outline-offset:2px}
+.pg .wrap{box-sizing:content-box;max-width:1100px;margin-inline:auto;padding-left:max(16px, env(safe-area-inset-left));padding-right:max(16px, env(safe-area-inset-right))}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:16px}
+.grid>*{grid-column:1 / -1;min-width:0}
+.sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.pg .skip{position:absolute;left:16px;top:-64px;z-index:40;display:inline-flex;align-items:center;min-height:48px;padding:12px 16px;border-radius:8px;background:#FFFFFF;color:#0E1A24;font-weight:700;text-decoration:none}
+.pg .skip:focus{top:8px;color:#0E1A24}
+.label{margin:0;font-family:'Red Hat Mono',ui-monospace,monospace;font-size:12px;line-height:16px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#4B5A66}
+.ex{font-family:'Red Hat Mono',ui-monospace,monospace;font-size:12px;line-height:16px;font-weight:500;letter-spacing:.02em;color:#0B4F94;background:#E6EFF9;border-radius:4px;padding:2px 4px;white-space:nowrap}
+.muted{color:#4B5A66}
+.h1{margin:0;font-family:'Red Hat Display',system-ui,sans-serif;font-size:48px;line-height:52px;font-weight:700;letter-spacing:-.03em;text-wrap:balance}
+.h2{margin:0;font-family:'Red Hat Display',system-ui,sans-serif;font-size:32px;line-height:40px;font-weight:700;letter-spacing:-.02em;text-wrap:balance}
+.h3{margin:0;font-family:'Red Hat Display',system-ui,sans-serif;font-size:20px;line-height:28px;font-weight:700;letter-spacing:-.01em;text-wrap:balance}
+.lead{font-size:20px;line-height:32px;color:#2B3A46}
+.cap{font-family:'Red Hat Mono',ui-monospace,monospace;font-size:12px;line-height:20px;color:#4B5A66}
+.ic{flex:none;color:#1667C4}
+.pg .btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:56px;padding:16px 24px;border:0;border-radius:8px;background:#1667C4;color:#FFFFFF;font-family:inherit;font-size:16px;line-height:24px;font-weight:700;text-decoration:none;cursor:pointer}
+.pg .btn:hover{background:#0F52A0;color:#FFFFFF}
+.pg .btn:active{background:#0B4182}
+.pg .btn:disabled{opacity:.7;cursor:progress}
+.pg .btn-sm{min-height:48px;padding:12px 16px}
+.btn-full{width:100%}
+.pg .icon-btn{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;padding:0;border:1px solid rgba(14,26,36,.18);border-radius:8px;background:#FFFFFF;color:#0E1A24;cursor:pointer}
+.ph{display:flex;align-items:flex-end;padding:16px;border-radius:8px;background:rgba(14,26,36,.08);font-family:'Red Hat Mono',ui-monospace,monospace;font-size:12px;line-height:16px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#3C4A55;aspect-ratio:4 / 3}
+
+.nav{position:sticky;top:0;z-index:20;background:transparent;border-bottom:1px solid transparent;transition:background-color .2s ease,border-color .2s ease}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.pg .nav .brand{display:flex;align-items:center;gap:12px;min-width:0;text-decoration:none;color:#0E1A24}
+.brand-t{display:flex;flex-direction:column;min-width:0}
+.brand-n{font-family:'Red Hat Display',system-ui,sans-serif;font-size:20px;line-height:24px;font-weight:700;letter-spacing:-.01em}
+.brand-s{font-size:12px;line-height:16px;font-weight:500;color:#4B5A66}
+.links{display:none;list-style:none;margin:0;padding:0;gap:32px}
+.pg .nav .links a{display:inline-flex;align-items:center;min-height:48px;text-decoration:none;font-weight:500;color:#0E1A24}
+.pg .nav .links a:hover{color:#1667C4}
+.nav-act{display:flex;align-items:center;gap:8px}
+.pg .nav .call-d{display:none;transition:opacity .2s ease,visibility .2s ease}
+.pg .nav.in-hero .call-d{opacity:0;visibility:hidden}
+.pg .nav .icon-btn{background:transparent;border-color:rgba(14,26,36,.35);color:#0E1A24}
+.pg .nav .icon-btn:hover{border-color:#0E1A24}
+.pg .nav :focus-visible{outline-color:#1667C4}
+.nav.is-solid{background:#E4E2DD;border-bottom-color:rgba(14,26,36,.14)}
+.pg .nav.is-solid .brand{color:#0E1A24}
+.nav.is-solid .brand-s{color:#4B5A66}
+.pg .nav.is-solid .links a{color:#0E1A24}
+.pg .nav.is-solid .links a:hover{color:#1667C4}
+.pg .nav.is-solid .icon-btn{border-color:#C9D1D8;color:#0E1A24}
+.pg .nav.is-solid .icon-btn:hover{border-color:#0E1A24}
+.pg .nav.is-solid :focus-visible{outline-color:#1667C4}
+.mark{flex:none;color:#1667C4}
+.nav.is-solid .mark{color:#1667C4}
+.mmenu{border-top:1px solid rgba(14,26,36,.14);padding-bottom:24px;background:#E4E2DD}
+.mlist{list-style:none;margin:0 0 16px;padding:0}
+.pg .mlist a{display:flex;align-items:center;min-height:56px;border-bottom:1px solid rgba(14,26,36,.14);text-decoration:none;font-family:'Red Hat Display',system-ui,sans-serif;font-size:20px;line-height:28px;font-weight:500;color:#0E1A24}
+
+.hero{position:relative;margin-top:-65px;background:#E4E2DD;color:#0E1A24;overflow:hidden}
+.hero-img{position:absolute;top:0;left:0;width:100%;height:440px;display:block;object-fit:cover;object-position:100% 0%;filter:saturate(1.2) contrast(1.03)}
+.hero-scrim{position:absolute;top:0;left:0;right:0;height:441px;background:linear-gradient(180deg,rgba(228,226,221,0) calc(100% - 120px),rgba(228,226,221,.25) calc(100% - 72px),rgba(228,226,221,.65) calc(100% - 30px),#E4E2DD 100%)}
+.hero-body{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:flex-end;min-height:clamp(640px,100vh,900px);min-height:clamp(640px,100svh,900px);padding:400px 0 64px}
+.hero-row{width:100%}
+.hero-t{display:flex;flex-direction:column;align-items:flex-start;gap:24px}
+.hero .h1{color:#0E1A24}
+.hero .lead{color:#2B3A46}
+.hero-cta{display:flex;flex-wrap:wrap;gap:8px;width:100%}
+.pg .hero-btn{flex:1 1 auto;gap:8px;padding:16px 12px}
+.pg .btn-ghost{border:1px solid #0E1A24;background:rgba(255,255,255,.4);color:#0E1A24}
+.pg .btn-ghost:hover{background:#0E1A24;color:#FFFFFF}
+.pg .btn-ghost:active{background:#26353F;color:#FFFFFF}
+.pg .hero :focus-visible{outline-color:#0E1A24}
+
+.sec{padding-block:64px;border-top:1px solid rgba(14,26,36,.14);scroll-margin-top:64px}
+.sec-cam{border-top:0}
+.sec-s{background:linear-gradient(180deg,#C5D5DC 0%,#D8DDDD 50%,#E4E2DD 100%);border-top:0}
+.sec-head{row-gap:16px;margin-bottom:40px}
+.head-p{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.pg .tlink{display:inline-flex;align-items:center;min-height:48px;font-weight:700;color:#1667C4}
+.pg .tlink:hover{color:#0F52A0}
+
+.cam-fig{margin:0;display:flex;flex-direction:column;gap:12px}
+.cam-box{position:relative;aspect-ratio:4 / 3;border-radius:8px;overflow:hidden;background:#0B0D0E}
+.cam-box svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.osd{position:absolute;font-family:'Red Hat Mono',ui-monospace,monospace;font-size:12px;line-height:16px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#F2F4F5;font-variant-numeric:tabular-nums}
+.osd.tl{top:16px;left:16px}
+.osd.tr{top:16px;right:16px;display:flex;align-items:center;gap:8px}
+.osd.bl{bottom:16px;left:16px;font-size:24px;line-height:32px;letter-spacing:0;text-transform:none}
+.osd.br{bottom:16px;right:16px}
+.rec{width:8px;height:8px;border-radius:50%;background:#FFFFFF}
+.ruler{padding-top:8px}
+.r-bar{position:relative;height:24px;border-bottom:2px solid #0E1A24}
+.r-mark{position:absolute;left:70%;bottom:-8px;width:2px;height:32px;background:#1667C4}
+.r-lab{position:absolute;right:8px;top:0;white-space:nowrap;font-family:'Red Hat Mono',ui-monospace,monospace;font-size:12px;line-height:16px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:#1667C4;font-variant-numeric:tabular-nums}
+.r-ticks{display:flex;justify-content:space-between;padding-top:12px;font-family:'Red Hat Mono',ui-monospace,monospace;font-size:12px;line-height:16px;color:#4B5A66;font-variant-numeric:tabular-nums}
+
+.cards{margin-block:0;list-style:none}
+.card{display:flex;flex-direction:row;align-items:center;gap:16px;padding-block:20px;border-top:1px solid rgba(14,26,36,.14)}
+.card-ic{flex:none;display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:8px;border:1px solid rgba(14,26,36,.12);background:rgba(255,255,255,.55)}
+.card .h3{min-width:0}
+
+.pg address{font-style:normal}
+
+.revs{row-gap:16px}
+.rv-card{margin:0;display:flex;flex-direction:column;gap:16px;padding:24px;border:1px solid rgba(14,26,36,.12);border-radius:8px;background:rgba(255,255,255,.6)}
+.rv-q{flex:none;color:#1667C4}
+.rv-card blockquote{margin:0;flex:1 1 auto}
+.pg .rv-card blockquote p{max-width:none;font-size:20px;line-height:32px;color:#0E1A24;text-align:justify;text-align-last:left;-webkit-hyphens:manual;hyphens:manual}
+.rv-card figcaption{display:flex;flex-direction:column;gap:4px;padding-top:16px;border-top:1px solid rgba(14,26,36,.12)}
+.rv-n{font-weight:700}
+.rv-who{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
+.rv-stars{flex:none;margin-left:auto;color:#E0A21B;overflow:visible}
+.rv-stars path{stroke:#0E1A24;stroke-width:1;stroke-linejoin:round}
+.rv-s{font-family:'Red Hat Mono',ui-monospace,monospace;font-size:12px;line-height:16px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#4B5A66}
+
+.reels{display:flex;gap:16px;margin:0;list-style:none;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:0 max(16px, env(safe-area-inset-right)) 4px max(16px, env(safe-area-inset-left));scroll-padding-inline:16px}
+.reels::-webkit-scrollbar{display:none}
+.reel{flex:0 0 72%;min-width:0;scroll-snap-align:start}
+.pg .reel-a{display:flex;flex-direction:column;gap:12px;text-decoration:none;color:#0E1A24}
+.reel-v{position:relative;display:flex;align-items:flex-end;aspect-ratio:9 / 16;padding:16px;border-radius:8px;background:rgba(14,26,36,.08);overflow:hidden;transition:background-color .2s ease}
+.pg .reel-a:hover .reel-v{background:rgba(14,26,36,.14)}
+.reel-l{font-family:'Red Hat Mono',ui-monospace,monospace;font-size:12px;line-height:16px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#3C4A55}
+.reel-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:#1667C4;color:#FFFFFF}
+.reel-t{font-family:'Red Hat Display',system-ui,sans-serif;font-size:20px;line-height:28px;font-weight:700;letter-spacing:-.01em}
+.pg .reel-a:hover .reel-t{color:#0F52A0}
+#snimci .head-p,#recenzije .head-p{display:none}
+.sec-more{margin-top:24px}
+.pg .btn-line{width:100%;gap:8px;border:1px solid #1667C4;background:transparent;color:#1667C4}
+.pg .btn-line:hover{border-color:#0F52A0;background:rgba(22,103,196,.08);color:#0F52A0}
+.pg .btn-line:active{background:rgba(22,103,196,.14);color:#0B4182}
+.reel-ctrl{display:flex;align-items:center;gap:16px;margin-top:16px}
+.reel-hint{display:flex;align-items:center;gap:12px;min-width:0}
+.reel-dots{display:flex;align-items:center;gap:8px}
+.dot{width:8px;height:8px;border-radius:4px;background:rgba(14,26,36,.24);transition:transform .2s ease,background-color .2s ease}
+.dot.is-on{transform:scale(1.5);background:#1667C4}
+.reel-hint-t{font-family:'Red Hat Mono',ui-monospace,monospace;font-size:12px;line-height:16px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#4B5A66}
+@media (prefers-reduced-motion: reduce){.dot,.reel-v{transition:none}}
+
+.faq{row-gap:0;align-items:start}
+#faq .sec-head{margin-bottom:24px}
+.faq-col{display:flex;flex-direction:column}
+.qa{border-top:1px solid rgba(14,26,36,.14)}
+.faq-col .qa:last-child{border-bottom:1px solid rgba(14,26,36,.14)}
+.faq-col+.faq-col .qa:first-child{border-top:0}
+.qa summary{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;padding-block:16px;cursor:pointer;list-style:none;font-family:'Red Hat Display',system-ui,sans-serif;font-size:20px;line-height:28px;font-weight:700;letter-spacing:-.01em;text-wrap:balance}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary:hover{color:#1667C4}
+.qa-ic{flex:none;color:#1667C4;transition:transform .2s ease}
+.pg .qa-cta{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;padding-block:16px;text-decoration:none;color:#0E1A24;font-family:'Red Hat Display',system-ui,sans-serif;font-size:20px;line-height:28px;font-weight:700;letter-spacing:-.01em}
+.qa-tel{color:#1667C4;white-space:nowrap}
+.pg .qa-cta:hover,.pg .qa-cta:hover .qa-tel{color:#0F52A0}
+.qa[open] .qa-ic{transform:rotate(180deg)}
+.qa[open] summary{padding-bottom:8px}
+.pg .qa-a{padding:0 40px 24px 0;color:#4B5A66}
+@media (prefers-reduced-motion: reduce){.qa-ic{transition:none}}
+
+.sec-d{background:linear-gradient(180deg,#A6C2CD 0%,#C6D5DA 55%,#D9DBD8 100%);color:#0E1A24;border-top:0}
+.sec-d .label{color:#33424D}
+.sec-d .muted{color:#26353F}
+.sec-d .ex{background:rgba(255,255,255,.6);color:#0B4F94}
+.pg .sec-d a{color:#0E1A24}
+.pg .sec-d a:hover{color:#0F52A0}
+.pg .sec-d :focus-visible{outline-color:#0E1A24}
+.ct{row-gap:48px}
+.ct-t{display:flex;flex-direction:column;align-items:flex-start;gap:24px}
+.pg .big-tel{display:inline-flex;align-items:center;min-height:48px;font-family:'Red Hat Display',system-ui,sans-serif;font-size:40px;line-height:48px;font-weight:700;letter-spacing:-.02em;white-space:nowrap;text-decoration-thickness:2px;font-variant-numeric:tabular-nums}
+.ct-l{margin:0;display:flex;flex-direction:column;gap:16px}
+.ct-l dd{margin:4px 0 0;overflow-wrap:anywhere}
+.frm{display:flex;flex-direction:column;gap:16px;padding:24px;border-radius:8px;background:#FFFFFF;color:#0E1A24}
+.frm .cap{color:#4B5A66}
+.frm .ex{color:#0B4F94;background:#E6EFF9}
+.fld{display:flex;flex-direction:column;gap:8px}
+.fld label{font-weight:500}
+.fld input,.fld textarea{width:100%;min-height:48px;padding:12px 16px;border:1px solid #9AA6B0;border-radius:8px;background:#FFFFFF;color:#0E1A24;font-family:inherit;font-size:16px;line-height:24px}
+.fld input:hover,.fld textarea:hover{border-color:#0E1A24}
+.fld textarea{min-height:120px;resize:vertical}
+.pg .frm :focus-visible{outline-color:#1667C4}
+.sent{color:#0E1A24;font-weight:700}
+.err{margin:0;color:#9B1C1C;font-weight:500}
+.fld input[aria-invalid="true"]{border-color:#9B1C1C;box-shadow:inset 0 0 0 1px #9B1C1C}
+
+.card-t{display:flex;flex-direction:column;gap:4px;min-width:0}
+
+.foot{padding-block:64px 32px;background:#0E1A24;color:#E8EDF1}
+.foot-g{row-gap:40px}
+.foot-g>div,.foot-g>nav{display:flex;flex-direction:column;gap:12px}
+.foot .brand-n{color:#FFFFFF}
+.foot .label{color:#9FB0BD}
+.foot .muted{color:#B8C4CD}
+.foot .cap{color:#9FB0BD}
+.foot .ex{background:#1F3B57;color:#D6E8FA}
+.pg .foot a{color:#FFFFFF;overflow-wrap:anywhere}
+.pg .foot a:hover{color:#8EC1F5}
+.pg .foot :focus-visible{outline-color:#FFFFFF}
+.f-list{list-style:none;margin:0;padding:0}
+.pg .f-list a{display:inline-flex;align-items:center;min-height:48px;text-decoration:none}
+.f-plain li{padding-block:4px;color:#E8EDF1}
+.f-soc{display:flex;flex-wrap:nowrap;gap:8px;padding-top:8px}
+.pg .f-soc a{flex:1 1 0;min-width:0;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 16px;border:1px solid rgba(255,255,255,.24);border-radius:8px;text-decoration:none;font-weight:500}
+.pg .f-map{position:relative;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;aspect-ratio:4 / 3;margin-top:8px;padding:16px;border:1px solid rgba(255,255,255,.18);border-radius:8px;background-color:#18262F;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:32px 32px;text-decoration:none;overflow:hidden}
+.pg .f-map:hover{border-color:#FFFFFF;color:#FFFFFF}
+.f-pin{position:absolute;top:50%;left:50%;transform:translate(-50%,-75%);color:#8EC1F5}
+.f-map-l{font-family:'Red Hat Mono',ui-monospace,monospace;font-size:12px;line-height:16px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#C3CDD5}
+.f-map-a{font-weight:700;color:#FFFFFF}
+.pg .f-soc a:hover{border-color:#FFFFFF;color:#FFFFFF}
+.f-soc svg{flex:none;color:#8EC1F5}
+.grid>.f-bot{display:flex;flex-direction:row;flex-wrap:wrap;align-items:center;gap:8px 24px;padding-top:24px;border-top:1px solid rgba(255,255,255,.14)}
+.pg .f-bot a{display:inline-flex;align-items:center;min-height:48px}
+.pg .f-bot>p{max-width:none}
+
+.callbar{position:sticky;bottom:0;z-index:20;padding:12px max(16px, env(safe-area-inset-right)) calc(12px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));background:#E4E2DD;border-top:1px solid rgba(14,26,36,.14);transition:transform .25s ease,visibility .25s ease}
+.callbar.in-hero{transform:translateY(100%);visibility:hidden}
+
+.br-d{display:none}
+@container pg (min-width: 768px){
+.br-d{display:inline}
+.pg .wrap{padding-left:max(32px, env(safe-area-inset-left));padding-right:max(32px, env(safe-area-inset-right))}
+.grid{column-gap:24px}
+.nav-in{min-height:72px;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);column-gap:24px;align-items:center}
+.pg .nav .brand{grid-column:1;justify-self:start}
+.links{grid-column:2;justify-self:center}
+.nav-act{grid-column:3;justify-self:end}
+.links{display:flex}
+.pg .nav .call-d{display:inline-flex}
+.pg .nav .burger,.mmenu,.callbar{display:none}
+.hero{margin-top:-73px}
+.hero-img{height:100%;object-position:100% 50%}
+.hero-scrim{bottom:-1px;height:auto;background:linear-gradient(180deg,rgba(228,226,221,0) calc(100% - 120px),rgba(228,226,221,.25) calc(100% - 72px),rgba(228,226,221,.65) calc(100% - 30px),#E4E2DD 100%),linear-gradient(90deg,rgba(236,238,238,.45) 0%,rgba(236,238,238,0) 55%)}
+.hero-body{min-height:clamp(640px,100vh,960px);min-height:clamp(640px,100svh,960px);justify-content:center;padding:168px 0 128px}
+.grid>.hero-t{grid-column:1 / span 7}
+.hero-cta{width:auto;gap:12px}
+.pg .hero-btn{flex:0 0 auto;gap:12px;padding:16px 24px}
+.h1{font-size:72px;line-height:76px}
+.h2{font-size:48px;line-height:56px}
+.sec{padding-block:96px;scroll-margin-top:72px}
+.sec-head{margin-bottom:64px}
+.grid>.head-h{grid-column:1 / span 6}
+.grid>.head-p{grid-column:7 / span 6;align-self:end}
+.cam-box{aspect-ratio:5 / 2}
+.grid>.card{grid-column:auto / span 4;padding-block:28px;padding-right:16px}
+.revs{row-gap:24px}
+.grid>.rv-card{grid-column:auto / span 4;padding:24px}
+.reels{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;overflow:visible;box-sizing:content-box;max-width:1100px;margin-inline:auto;padding:0 max(32px, env(safe-area-inset-right)) 0 max(32px, env(safe-area-inset-left))}
+.reel-ctrl{display:none}
+#snimci .head-p,#recenzije .head-p{display:flex}
+.sec-more{display:none}
+.reel{grid-column:span 4}
+#faq .sec-head{margin-bottom:32px}
+.grid>.faq-col:nth-child(1){grid-column:1 / span 6}
+.grid>.faq-col:nth-child(2){grid-column:7 / span 6}
+.faq-col+.faq-col .qa:first-child{border-top:1px solid rgba(14,26,36,.14)}
+.grid>.ct-t{grid-column:1 / span 5}
+.grid>.ct-f{grid-column:7 / span 6}
+.frm{padding:32px}
+.pg .big-tel{font-size:48px;line-height:56px}
+.foot{padding-block:96px 40px}
+.foot-g{row-gap:64px}
+.grid>.f1{grid-column:1 / span 4}
+.grid>.f-nav{grid-column:5 / span 2}
+.grid>.f-svc{grid-column:7 / span 3}
+.grid>.f-ct{grid-column:10 / span 3}
+.grid>.f-bot{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
+.f-bot>p{grid-column:1 / span 9}
+.f-bot>a{grid-column:10 / span 3}
+}
+
+.if{display:contents}
+.if[hidden]{display:none}
+.concept-bar{position:relative;z-index:30;padding:8px max(16px, env(safe-area-inset-left));background:#0E1A24;color:#FFFFFF;font-family:'Red Hat Mono',ui-monospace,monospace;font-size:12px;line-height:16px;letter-spacing:.04em}
+</style>
+</head>
+<body>
+<div class="pg">
+<a class="skip" href="#sadrzaj">Preskočite na sadržaj</a>
+<div class="concept-bar" role="note">Koncept dizajna za Vodoinstalater Bugarski. Ovo nije zvanični sajt firme.</div>
+
+
+<nav class="nav in-hero" aria-label="Glavni meni">
+<div class="wrap">
+<div class="nav-in">
+<a class="brand" href="#top" aria-label="Vodoinstalater Bugarski, na početak">
+<svg class="mark" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="16" cy="16" r="14"></circle><circle cx="17" cy="15" r="8"></circle><circle cx="17.5" cy="14.5" r="3" fill="currentColor" stroke="none"></circle></svg>
+<span class="brand-t"><span class="brand-n" translate="no">Bugarski</span><span class="brand-s">vodoinstalater, Novi Sad</span></span>
+</a>
+<ul class="links">
+<li><a href="#usluge">Usluge</a></li>
+<li><a href="#recenzije">Recenzije</a></li>
+<li><a href="#kontakt">Kontakt</a></li>
+</ul>
+<div class="nav-act">
+<a class="btn btn-sm call-d" href="tel:+381605388848" translate="no">
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+060&nbsp;538&nbsp;8848
+</a>
+<button class="icon-btn burger" id="b-burger" type="button" aria-controls="b-menu" aria-expanded="false" aria-label="Otvori meni">
+<span class="if" data-if="icon-open">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+</span>
+<span class="if" data-if="icon-close" hidden>
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+</span>
+</button>
+</div>
+</div>
+</div>
+<span class="if" data-if="menu" hidden>
+<div class="mmenu" id="b-menu">
+<div class="wrap">
+<ul class="mlist">
+<li><a href="#usluge">Usluge</a></li>
+<li><a href="#kamera">Snimanje kamerom</a></li>
+<li><a href="#snimci">Snimci sa terena</a></li>
+<li><a href="#recenzije">Recenzije</a></li>
+<li><a href="#faq">Česta pitanja</a></li>
+<li><a href="#kontakt">Kontakt</a></li>
+</ul>
+<a class="btn btn-full" href="tel:+381605388848">Pozovite <span translate="no">060&nbsp;538&nbsp;8848</span></a>
+</div>
+</div>
+</span>
+</nav>
+
+<main id="sadrzaj">
+<header class="hero" id="top">
+<img class="hero-img" src="assets/hero.jpg" width="2880" height="1600" fetchpriority="high" decoding="async" alt="Plave cevi sa kolenima i prirubnicama na svetlom nebu.">
+<div class="hero-scrim" aria-hidden="true"></div>
+<div class="hero-body">
+<div class="hero-row">
+<div class="wrap grid">
+<div class="hero-t">
+<h1 class="h1">Odgušenje kanalizacije i vodoinstalaterske usluge</h1>
+<p class="lead">Brzo i efikasno rešavamo sve probleme vezane za <br class="br-d">vodovod i kanalizaciju na teritoriji Novog Sada i okoline.</p>
+<div class="hero-cta">
+<a class="btn hero-btn" href="tel:+381605388848" aria-label="Pozovite odmah: 060 538 8848">
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+Pozovite odmah
+</a>
+<a class="btn btn-ghost hero-btn" href="#kontakt">
+Pošaljite upit
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"></path><path d="M8 7h9v9"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+
+<section class="sec sec-cam" id="kamera" aria-labelledby="b-kam">
+<div class="wrap grid sec-head">
+<p class="label">Snimanje kamerom</p>
+<h2 class="h2 head-h" id="b-kam">Inspekcija kanalizacije</h2>
+<div class="head-p"><p class="muted">Kamera ide kroz cev i pokaže na kom metru je zapušenje. Tako znamo čime da otvorimo cev, bez nagađanja. <span class="ex">[PRIMER]</span></p></div>
+</div>
+<div class="wrap grid">
+<figure class="cam-fig">
+<div class="cam-box">
+<svg viewBox="0 0 800 340" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustracija kadra sa kamere u kanalizacionoj cevi. Na 8,4 metra vidi se zapušenje.">
+<defs>
+<radialGradient id="b-g" cx="0.525" cy="0.49" r="0.6">
+<stop offset="0" stop-color="#000000"></stop>
+<stop offset="0.16" stop-color="#090B0C"></stop>
+<stop offset="0.5" stop-color="#23282B"></stop>
+<stop offset="1" stop-color="#454C50"></stop>
+</radialGradient>
+</defs>
+<rect width="800" height="340" fill="url(#b-g)"></rect>
+<g fill="none" stroke="#8B9297" stroke-width="2">
+<ellipse cx="404" cy="182" rx="560" ry="330" stroke-opacity="0.5"></ellipse>
+<ellipse cx="410" cy="177" rx="390" ry="236" stroke-opacity="0.42"></ellipse>
+<ellipse cx="414" cy="173" rx="270" ry="164" stroke-opacity="0.34"></ellipse>
+<ellipse cx="417" cy="171" rx="186" ry="113" stroke-opacity="0.26"></ellipse>
+<ellipse cx="419" cy="169" rx="128" ry="78" stroke-opacity="0.2"></ellipse>
+<ellipse cx="420" cy="168" rx="86" ry="53" stroke-opacity="0.14"></ellipse>
+</g>
+<ellipse cx="420" cy="168" rx="54" ry="34" fill="#000000"></ellipse>
+<path d="M-10 350 L810 350 L446 190 Q420 197 394 190 Z" fill="#33403F" fill-opacity="0.6"></path>
+<path d="M140 332 Q400 346 660 332" fill="none" stroke="#A2B4B3" stroke-opacity="0.3" stroke-width="2"></path>
+<path d="M250 308 Q400 318 550 308" fill="none" stroke="#A2B4B3" stroke-opacity="0.2" stroke-width="2"></path>
+<path d="M300 304 C308 258 348 228 398 220 C432 214 480 222 508 244 C528 260 536 282 536 304 Q418 316 300 304 Z" fill="#5E503E"></path>
+<g fill="none" stroke="#9C8868" stroke-width="3" stroke-linecap="round" stroke-opacity="0.85">
+<path d="M332 280 C362 260 400 254 438 260"></path>
+<path d="M356 298 C392 280 442 276 490 288"></path>
+<path d="M390 238 C422 232 460 238 488 254"></path>
+<path d="M446 266 C466 262 492 268 510 280"></path>
+</g>
+<g fill="#B9A786">
+<ellipse cx="370" cy="250" rx="4" ry="2"></ellipse>
+<ellipse cx="468" cy="238" rx="3" ry="2"></ellipse>
+<ellipse cx="420" cy="286" rx="5" ry="2"></ellipse>
+</g>
+<g fill="none" stroke="#FFFFFF" stroke-width="3">
+<path d="M286 226 V206 H310"></path>
+<path d="M526 206 H550 V226"></path>
+<path d="M286 294 V314 H310"></path>
+<path d="M526 314 H550 V294"></path>
+</g>
+<rect x="286" y="178" width="96" height="22" fill="#1667C4"></rect>
+<text x="294" y="194" font-family="Red Hat Mono, monospace" font-size="12" font-weight="500" letter-spacing="1" fill="#FFFFFF">ZAPUŠENJE</text>
+<path d="M400 154 V166 M400 174 V186 M384 170 H396 M404 170 H416" stroke="#FFFFFF" stroke-opacity="0.5" stroke-width="1.5"></path>
+</svg>
+<span class="osd tl" aria-hidden="true">Kamera · Ø110 PVC</span>
+<span class="osd tr" aria-hidden="true"><span class="rec"></span>REC</span>
+<span class="osd bl" aria-hidden="true">08,40&nbsp;m</span>
+<span class="osd br" aria-hidden="true">[PRIMER]</span>
+</div>
+<div class="ruler" aria-hidden="true">
+<div class="r-bar"><span class="r-mark"><span class="r-lab">Zapušenje · 8,4&nbsp;m</span></span></div>
+<div class="r-ticks"><span>0&nbsp;m</span><span>3&nbsp;m</span><span>6&nbsp;m</span><span>9&nbsp;m</span><span>12&nbsp;m</span></div>
+</div>
+
+</figure>
+</div>
+</section>
+
+<section class="sec" id="usluge" aria-labelledby="b-usluge">
+<div class="wrap grid sec-head">
+<p class="label">Šta radimo</p>
+<h2 class="h2 head-h" id="b-usluge">Naše usluge</h2>
+</div>
+<ul class="wrap grid cards">
+<li class="card">
+<span class="card-ic"><svg class="ic" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h9a6 6 0 0 1 6 6v8"></path><path d="M3 13h7a2 2 0 0 1 2 2v6"></path></svg></span>
+<h3 class="h3">Mašinsko odgušenje kanalizacije</h3>
+</li>
+<li class="card">
+<span class="card-ic"><svg class="ic" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10h8v4H3z"></path><path d="M11 12h3"></path><path d="M17 8l4-2M17 12h4M17 16l4 2"></path></svg></span>
+<h3 class="h3">Odgušenje mašinom pod visokim pritiskom</h3>
+</li>
+<li class="card">
+<span class="card-ic"><svg class="ic" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="7" width="13" height="10" rx="2"></rect><path d="M15.5 10.5l6-3v9l-6-3"></path></svg></span>
+<h3 class="h3">Snimanje kamerom kanalizacione cevi</h3>
+</li>
+<li class="card">
+<span class="card-ic"><svg class="ic" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h18"></path><path d="M3 15h7v6"></path><path d="M14 21v-6h7"></path></svg></span>
+<h3 class="h3">Izrada nove instalacije</h3>
+</li>
+<li class="card">
+<span class="card-ic"><svg class="ic" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg></span>
+<h3 class="h3">Opravka i prepravka stare instalacije</h3>
+</li>
+<li class="card">
+<span class="card-ic"><svg class="ic" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11h18a7 7 0 0 1-7 7h-4a7 7 0 0 1-7-7z"></path><path d="M12 18v3"></path><path d="M12 11V6a2 2 0 0 1 2-2h3"></path></svg></span>
+<h3 class="h3">Fina montaža i montaža sanitarije</h3>
+</li>
+<li class="card">
+<span class="card-ic"><svg class="ic" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h18v3a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"></path><path d="M6 12V5a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2"></path><path d="M7 19l-1 2M17 19l1 2"></path></svg></span>
+<h3 class="h3">Adaptacija kupatila</h3>
+</li>
+<li class="card">
+<span class="card-ic"><svg class="ic" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h20"></path><path d="M4 8l2-3M10 8l2-3M16 8l2-3"></path><path d="M3 14h18M3 19h18"></path></svg></span>
+<h3 class="h3">Adaptacija spoljne kanalizacije</h3>
+</li>
+<li class="card">
+<span class="card-ic"><svg class="ic" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="3"></circle><path d="M12 1v3M12 20v3M1 12h3M20 12h3"></path></svg></span>
+<div class="card-t"><h3 class="h3">Kirnerovanje rupa i sečenje betona</h3><p class="cap">Rupe Ø75, Ø110 i Ø160 mm</p></div>
+</li>
+</ul>
+</section>
+
+
+
+<section class="sec" id="snimci" aria-labelledby="b-sni">
+<div class="wrap grid sec-head">
+<p class="label">Snimci sa terena</p>
+<h2 class="h2 head-h" id="b-sni">Pogledajte kako radimo</h2>
+<div class="head-p">
+
+<a class="tlink" href="https://www.facebook.com/goranvodovodikanalizacija/reels/" target="_blank" rel="noopener" style="align-self: flex-end; gap: 8px">Svi snimci na Facebooku<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"></path><path d="M8 7h9v9"></path></svg><span class="sr"> (otvara se u novom prozoru)</span></a>
+</div>
+</div>
+<ul class="reels" id="reels-track" tabindex="0" aria-label="Snimci sa terena, prevucite ili koristite strelice">
+<li class="reel">
+<a class="reel-a" href="https://www.facebook.com/reel/641336635245473/" target="_blank" rel="noopener">
+<span class="reel-v"><span class="reel-l">Reel 1 · Facebook</span><span class="reel-play"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"></path></svg></span></span>
+<span class="reel-t">Montaža, izrada instalacija i mašinsko odgušenje</span>
+<span class="sr"> (otvara se na Facebooku u novom prozoru)</span>
+</a>
+</li>
+<li class="reel">
+<a class="reel-a" href="https://www.facebook.com/reel/153281859911120/" target="_blank" rel="noopener">
+<span class="reel-v"><span class="reel-l">Reel 2 · Facebook</span><span class="reel-play"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"></path></svg></span></span>
+<span class="reel-t"><span class="ex">[PRIMER]</span> Opis snimka</span>
+<span class="sr"> (otvara se na Facebooku u novom prozoru)</span>
+</a>
+</li>
+<li class="reel">
+<a class="reel-a" href="https://www.facebook.com/reel/297443524232689/" target="_blank" rel="noopener">
+<span class="reel-v"><span class="reel-l">Reel 3 · Facebook</span><span class="reel-play"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"></path></svg></span></span>
+<span class="reel-t"><span class="ex">[PRIMER]</span> Opis snimka</span>
+<span class="sr"> (otvara se na Facebooku u novom prozoru)</span>
+</a>
+</li>
+</ul>
+<div class="wrap reel-ctrl">
+<div class="reel-hint">
+<div class="reel-dots" aria-hidden="true">
+<span class="dot is-on"></span><span class="dot"></span><span class="dot"></span>
+</div>
+<span class="reel-hint-t">Prevucite za još</span>
+</div>
+</div>
+<div class="wrap sec-more">
+<a class="btn btn-line" href="https://www.facebook.com/goranvodovodikanalizacija/reels/" target="_blank" rel="noopener">Svi snimci na Facebooku<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"></path><path d="M8 7h9v9"></path></svg><span class="sr"> (otvara se u novom prozoru)</span></a>
+</div>
+</section>
+
+<section class="sec sec-s" id="recenzije" aria-labelledby="b-rec">
+<div class="wrap grid sec-head">
+<p class="label">Recenzije</p>
+<h2 class="h2 head-h" id="b-rec">Šta kažu naše mušterije</h2>
+<div class="head-p">
+
+<a class="tlink" href="https://www.google.com/maps/place/Vodoinstalater+Novi+Sad,+Kovilj,+Budisava,+Futog,+Rumenka+-+Goran+Vodoinstalater/@45.282216,19.7684782,11215m/data=!3m1!1e3!4m10!1m2!2m1!1sgoran+bugarski+instalacije!3m6!1s0x475b111fb0eb506f:0xaa7fd352a4904179!8m2!3d45.282216!4d19.844674!15sChpnb3JhbiBidWdhcnNraSBpbnN0YWxhY2lqZZIBB3BsdW1iZXLgAQA!16s%2Fg%2F11qzx5m0v8" target="_blank" rel="noopener" style="align-self: flex-end; gap: 8px"><span>Sve recenzije na Google-u</span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"></path><path d="M8 7h9v9"></path></svg><span class="sr"> (otvara se u novom prozoru)</span></a>
+</div>
+</div>
+<div class="wrap grid revs">
+<figure class="rv-card">
+<svg class="rv-q" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M13 9c-4.5 1.2-7 4.5-7 9v5h7v-7H9.5c.3-2.4 1.5-3.9 3.5-4.6z"></path><path d="M26 9c-4.5 1.2-7 4.5-7 9v5h7v-7h-3.5c.3-2.4 1.5-3.9 3.5-4.6z"></path></svg>
+<blockquote><p>Imali smo pro­blem sa ka­na­li­za­ci­jom, teh­ni­čar je pro­ve­rio ka­me­rom, pro­na­šao gde je pro­blem i us­pe­šno ga me­ha­nič­ki re­šio.</p></blockquote>
+<figcaption><span class="rv-who"><span class="rv-n">Nataša</span><svg class="rv-stars" viewBox="0 0 88 16" width="88" height="16" role="img" aria-label="Ocena: 5 od 5"><g fill="currentColor"><path d="M8 1.5l1.9 4.1 4.4.5-3.3 3 .9 4.4L8 11.3l-3.9 2.2.9-4.4-3.3-3 4.4-.5z"></path><path transform="translate(18 0)" d="M8 1.5l1.9 4.1 4.4.5-3.3 3 .9 4.4L8 11.3l-3.9 2.2.9-4.4-3.3-3 4.4-.5z"></path><path transform="translate(36 0)" d="M8 1.5l1.9 4.1 4.4.5-3.3 3 .9 4.4L8 11.3l-3.9 2.2.9-4.4-3.3-3 4.4-.5z"></path><path transform="translate(54 0)" d="M8 1.5l1.9 4.1 4.4.5-3.3 3 .9 4.4L8 11.3l-3.9 2.2.9-4.4-3.3-3 4.4-.5z"></path><path transform="translate(72 0)" d="M8 1.5l1.9 4.1 4.4.5-3.3 3 .9 4.4L8 11.3l-3.9 2.2.9-4.4-3.3-3 4.4-.5z"></path></g></svg></span></figcaption>
+</figure>
+<figure class="rv-card">
+<svg class="rv-q" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M13 9c-4.5 1.2-7 4.5-7 9v5h7v-7H9.5c.3-2.4 1.5-3.9 3.5-4.6z"></path><path d="M26 9c-4.5 1.2-7 4.5-7 9v5h7v-7h-3.5c.3-2.4 1.5-3.9 3.5-4.6z"></path></svg>
+<blockquote><p>Po­red zna­nja i is­ku­stva, sve je bilo ured­no i či­sto po­sle po­sla, sve naj­bo­lje pre­po­ru­ke…</p></blockquote>
+<figcaption><span class="rv-who"><span class="rv-n">Milan G.</span><svg class="rv-stars" viewBox="0 0 88 16" width="88" height="16" role="img" aria-label="Ocena: 5 od 5"><g fill="currentColor"><path d="M8 1.5l1.9 4.1 4.4.5-3.3 3 .9 4.4L8 11.3l-3.9 2.2.9-4.4-3.3-3 4.4-.5z"></path><path transform="translate(18 0)" d="M8 1.5l1.9 4.1 4.4.5-3.3 3 .9 4.4L8 11.3l-3.9 2.2.9-4.4-3.3-3 4.4-.5z"></path><path transform="translate(36 0)" d="M8 1.5l1.9 4.1 4.4.5-3.3 3 .9 4.4L8 11.3l-3.9 2.2.9-4.4-3.3-3 4.4-.5z"></path><path transform="translate(54 0)" d="M8 1.5l1.9 4.1 4.4.5-3.3 3 .9 4.4L8 11.3l-3.9 2.2.9-4.4-3.3-3 4.4-.5z"></path><path transform="translate(72 0)" d="M8 1.5l1.9 4.1 4.4.5-3.3 3 .9 4.4L8 11.3l-3.9 2.2.9-4.4-3.3-3 4.4-.5z"></path></g></svg></span></figcaption>
+</figure>
+<figure class="rv-card">
+<svg class="rv-q" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M13 9c-4.5 1.2-7 4.5-7 9v5h7v-7H9.5c.3-2.4 1.5-3.9 3.5-4.6z"></path><path d="M26 9c-4.5 1.2-7 4.5-7 9v5h7v-7h-3.5c.3-2.4 1.5-3.9 3.5-4.6z"></path></svg>
+<blockquote><p>Naj­bo­lji maj­stor… sve pre­po­ru­ke</p></blockquote>
+<figcaption><span class="rv-who"><span class="rv-n">Milan M.</span><svg class="rv-stars" viewBox="0 0 88 16" width="88" height="16" role="img" aria-label="Ocena: 5 od 5"><g fill="currentColor"><path d="M8 1.5l1.9 4.1 4.4.5-3.3 3 .9 4.4L8 11.3l-3.9 2.2.9-4.4-3.3-3 4.4-.5z"></path><path transform="translate(18 0)" d="M8 1.5l1.9 4.1 4.4.5-3.3 3 .9 4.4L8 11.3l-3.9 2.2.9-4.4-3.3-3 4.4-.5z"></path><path transform="translate(36 0)" d="M8 1.5l1.9 4.1 4.4.5-3.3 3 .9 4.4L8 11.3l-3.9 2.2.9-4.4-3.3-3 4.4-.5z"></path><path transform="translate(54 0)" d="M8 1.5l1.9 4.1 4.4.5-3.3 3 .9 4.4L8 11.3l-3.9 2.2.9-4.4-3.3-3 4.4-.5z"></path><path transform="translate(72 0)" d="M8 1.5l1.9 4.1 4.4.5-3.3 3 .9 4.4L8 11.3l-3.9 2.2.9-4.4-3.3-3 4.4-.5z"></path></g></svg></span></figcaption>
+</figure>
+</div>
+<div class="wrap sec-more">
+<a class="btn btn-line" href="https://www.google.com/maps/place/Vodoinstalater+Novi+Sad,+Kovilj,+Budisava,+Futog,+Rumenka+-+Goran+Vodoinstalater/@45.282216,19.7684782,11215m/data=!3m1!1e3!4m10!1m2!2m1!1sgoran+bugarski+instalacije!3m6!1s0x475b111fb0eb506f:0xaa7fd352a4904179!8m2!3d45.282216!4d19.844674!15sChpnb3JhbiBidWdhcnNraSBpbnN0YWxhY2lqZZIBB3BsdW1iZXLgAQA!16s%2Fg%2F11qzx5m0v8" target="_blank" rel="noopener">Sve recenzije na Google mapama<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"></path><path d="M8 7h9v9"></path></svg><span class="sr"> (otvara se u novom prozoru)</span></a>
+</div>
+</section>
+
+<section class="sec" id="faq" aria-labelledby="b-faq">
+<div class="wrap grid sec-head">
+<p class="label">Pitanja</p>
+<h2 class="h2 head-h" id="b-faq">Česta pitanja</h2>
+
+</div>
+<div class="wrap grid faq">
+<div class="faq-col">
+<details class="qa">
+<summary>Da li radite vikendom i noću?<svg class="qa-ic" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></summary>
+<p class="qa-a">Da. Radimo svaki dan, 0-24 h, i vikendom i praznikom.</p>
+</details>
+<details class="qa">
+<summary>Za koliko brzo dolazite?<svg class="qa-ic" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></summary>
+<p class="qa-a">Što pre možemo. Kad pozovete, kažemo vam okvirno vreme dolaska. <span class="ex">[PRIMER] rok dolaska</span></p>
+</details>
+<details class="qa">
+<summary>Gde sve dolazite?<svg class="qa-ic" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></summary>
+<p class="qa-a">Novi Sad, Futog, Kovilj, Budisava i Rumenka. Ako ste dalje, pozovite pa se dogovorimo. <span class="ex">[PRIMER]</span></p>
+</details>
+<details class="qa">
+<summary>Da li radite adaptaciju celog kupatila?<svg class="qa-ic" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></summary>
+<p class="qa-a">Da. Radimo novu instalaciju vodovoda i kanalizacije i finu montažu sanitarije. <span class="ex">[PRIMER]</span></p>
+</details>
+</div>
+<div class="faq-col">
+<details class="qa">
+<summary>Koliko košta odgušenje kanalizacije?<svg class="qa-ic" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></summary>
+<p class="qa-a">Zavisi od toga gde je zapušenje i koja mašina treba. Okvirnu cenu kažemo telefonom, kad opišete problem. <span class="ex">[PRIMER] cene</span></p>
+</details>
+<details class="qa">
+<summary>Kada treba snimati cev kamerom?<svg class="qa-ic" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></summary>
+<p class="qa-a">Kad se isti odvod zapušava više puta ili sumnjate da je cev pukla. Kamera pokaže na kom metru je problem. <span class="ex">[PRIMER]</span></p>
+</details>
+<details class="qa">
+<summary>Mogu li da pošaljem sliku problema?<svg class="qa-ic" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></summary>
+<p class="qa-a">Možete, na WhatsApp <a href="https://wa.me/381605388848" target="_blank" rel="noopener" translate="no">+381&nbsp;60&nbsp;538&nbsp;8848<span class="sr"> (otvara se u novom prozoru)</span></a>. Iz slike često vidimo šta treba da ponesemo. <span class="ex">[PRIMER]</span></p>
+</details>
+<a class="qa qa-cta" href="tel:+381605388848" aria-label="Imate još pitanja? Pozovite 060 538 8848">
+<span>Imate još pitanja?</span>
+<svg class="qa-ic" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+</a>
+</div>
+</div>
+</section>
+
+<section class="sec sec-d" id="kontakt" aria-labelledby="b-kon">
+<div class="wrap grid ct">
+<div class="ct-t">
+<p class="label">Kontakt</p>
+<h2 class="h2" id="b-kon">Pozovite ili pošaljite upit</h2>
+<p class="muted">Za zapušenu kanalizaciju najbrže je da pozovete. <br class="br-d">Ako planirate novu instalaciju ili montažu pošaljite <br class="br-d">opis i javićemo Vam se u što kraćem roku.</p>
+<a class="big-tel" href="tel:+381605388848" translate="no">060&nbsp;538&nbsp;8848</a>
+<dl class="ct-l">
+<div><dt class="label">WhatsApp</dt><dd><a href="https://wa.me/381605388848" target="_blank" rel="noopener" translate="no">+381&nbsp;60&nbsp;538&nbsp;8848<span class="sr"> (otvara se u novom prozoru)</span></a></dd></div>
+<div><dt class="label">E-pošta</dt><dd><a href="mailto:bugarskiinstalacije@gmail.com" translate="no">bugarskiinstalacije@gmail.com</a></dd></div>
+<div><dt class="label">Adresa</dt><dd><address>Stevana Todorovića 46b (bivša Gazimestanska), Novi Sad</address></dd></div>
+<div><dt class="label">Radno vreme</dt><dd>Svaki dan, 0-24&nbsp;h</dd></div>
+</dl>
+</div>
+<form class="frm ct-f" aria-label="Upit za posao" novalidate="">
+<div class="fld"><label for="b-ime">Ime</label><input id="b-ime" name="ime" type="text" autocomplete="name" placeholder="Npr. Marko Petrović…" aria-required="true" aria-invalid="false"><span class="if" data-if="err-ime" hidden><p class="err" id="b-ime-err">Upišite ime, da znamo kako da vam se obratimo.</p></span></div>
+<div class="fld"><label for="b-tel">Telefon</label><input id="b-tel" name="telefon" type="tel" inputmode="tel" autocomplete="tel" spellcheck="false" placeholder="06x xxx xxxx…" aria-required="true" aria-invalid="false"><span class="if" data-if="err-tel" hidden><p class="err" id="b-tel-err">Upišite broj telefona, na primer 060 123 4567.</p></span></div>
+<div class="fld"><label for="b-mesto">Mesto ili deo grada</label><input id="b-mesto" name="mesto" type="text" autocomplete="address-level2" placeholder="Npr. Futog ili Liman 3…"></div>
+<div class="fld"><label for="b-opis">Šta treba da uradimo</label><textarea id="b-opis" name="opis" rows="4" autocomplete="off" placeholder="Opišite problem: šta se desilo, od kada i gde (kupatilo, kuhinja, dvorište)…"></textarea></div>
+<button class="btn btn-full" type="submit" aria-busy="false">Pošaljite upit</button>
+<p class="cap" role="status" aria-live="polite">
+<span class="if" data-if="not-sent"><span></span></span>
+<span class="if" data-if="sent" hidden><span><span class="sent">Upit je poslat.</span> Javljamo se na broj koji ste ostavili.</span></span>
+</p>
+</form>
+</div>
+</section>
+</main>
+
+<footer class="foot">
+<div class="wrap grid foot-g">
+<div class="f1">
+<p class="brand-n" translate="no">Vodoinstalater Bugarski</p>
+<p class="muted">Mašinsko odgušenje kanalizacije, snimanje cevi kamerom i vodoinstalaterski radovi u Novom Sadu i okolini.</p>
+<p class="label">Radno vreme</p>
+<p>Svaki dan, 0-24&nbsp;h</p>
+<div class="f-soc">
+<a href="https://www.facebook.com/goranvodovodikanalizacija/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h-2a4 4 0 0 0-4 4v3H7v4h2v7h4v-7h2.5l.5-4h-3V7.5a.5.5 0 0 1 .5-.5H15z"></path></svg>Facebook<span class="sr"> (otvara se u novom prozoru)</span></a>
+<a href="https://wa.me/381605388848" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.65-4.95A8.5 8.5 0 1 1 7.9 19.4z"></path><path d="M9 8.5c0 3.6 2.9 6.5 6.5 6.5l1-1.6-2.1-1-1 1c-1.1-.5-2.2-1.6-2.7-2.7l1-1-1-2.1z"></path></svg>WhatsApp<span class="sr"> (otvara se u novom prozoru)</span></a>
+</div>
+<a class="f-map" href="https://www.google.com/maps/place/Vodoinstalater+Novi+Sad,+Kovilj,+Budisava,+Futog,+Rumenka+-+Goran+Vodoinstalater/@45.282216,19.7684782,11215m/data=!3m1!1e3!4m10!1m2!2m1!1sgoran+bugarski+instalacije!3m6!1s0x475b111fb0eb506f:0xaa7fd352a4904179!8m2!3d45.282216!4d19.844674!15sChpnb3JhbiBidWdhcnNraSBpbnN0YWxhY2lqZZIBB3BsdW1iZXLgAQA!16s%2Fg%2F11qzx5m0v8" target="_blank" rel="noopener">
+<svg class="f-pin" viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
+<span class="f-map-l">Mapa: Stevana Todorovića 46b</span>
+<span class="f-map-a">Otvorite u Google mapama<span class="sr"> (otvara se u novom prozoru)</span></span>
+</a>
+</div>
+<nav class="f-nav" aria-label="Linkovi u podnožju">
+<p class="label">Stranica</p>
+<ul class="f-list">
+<li><a href="#kamera">Snimanje kamerom</a></li>
+<li><a href="#usluge">Usluge</a></li>
+<li><a href="#snimci">Snimci sa terena</a></li>
+<li><a href="#recenzije">Recenzije</a></li>
+<li><a href="#faq">Česta pitanja</a></li>
+<li><a href="#kontakt">Kontakt</a></li>
+</ul>
+</nav>
+<div class="f-svc">
+<p class="label">Usluge</p>
+<ul class="f-list f-plain">
+<li>Mašinsko odgušenje kanalizacije</li>
+<li>Odgušenje pod visokim pritiskom</li>
+<li>Snimanje kanalizacije kamerom</li>
+<li>Nova instalacija vodovoda i kanalizacije</li>
+<li>Opravka i prepravka instalacije</li>
+<li>Adaptacija kupatila</li>
+<li>Adaptacija spoljne kanalizacije</li>
+<li>Kirnerovanje rupa i sečenje betona</li>
+<li>Fina montaža i sanitarija</li>
+</ul>
+</div>
+<div class="f-ct">
+<p class="label">Kontakt</p>
+<ul class="f-list">
+<li><a href="tel:+381605388848" translate="no">060&nbsp;538&nbsp;8848</a></li>
+<li><a href="https://wa.me/381605388848" target="_blank" rel="noopener">WhatsApp poruka<span class="sr"> (otvara se u novom prozoru)</span></a></li>
+<li><a href="mailto:bugarskiinstalacije@gmail.com" translate="no">bugarskiinstalacije@gmail.com</a></li>
+</ul>
+<p class="label">Adresa</p>
+<address>Stevana Todorovića 46b<br>bivša Gazimestanska, 21000 Novi Sad</address>
+<p class="label">Područje rada</p>
+<p>Novi Sad, Futog, Kovilj, Budisava, Rumenka</p>
+</div>
+<div class="f-bot">
+<p class="cap">© 2026 <span translate="no">Vodoinstalater Bugarski</span> · preduzetnik, Novi Sad · <span class="ex">[PRIMER]</span> PIB i matični broj</p>
+<a class="cap" href="#top">Na vrh stranice</a>
+</div>
+</div>
+</footer>
+
+<div class="callbar in-hero">
+<a class="btn btn-full" href="tel:+381605388848">
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+Pozovite <span translate="no">060&nbsp;538&nbsp;8848</span>
+</a>
+</div>
+
+</div>
+
+<script>
+(function () {
+  var nav = document.querySelector('.nav');
+  var bar = document.querySelector('.callbar');
+  var hero = document.getElementById('top');
+  var burger = document.getElementById('b-burger');
+  var menu = document.querySelector('[data-if="menu"]');
+  var icOpen = document.querySelector('[data-if="icon-open"]');
+  var icClose = document.querySelector('[data-if="icon-close"]');
+  var open = false, raf = 0;
+
+  function paint() {
+    var scrolled = (window.scrollY || 0) > 24;
+    var inHero = hero ? hero.getBoundingClientRect().bottom > 96 : true;
+    nav.classList.toggle('is-solid', open || scrolled);
+    nav.classList.toggle('in-hero', inHero && !open);
+    if (bar) bar.classList.toggle('in-hero', inHero);
+  }
+  function onScroll() {
+    if (raf) return;
+    raf = requestAnimationFrame(function () { raf = 0; paint(); });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  paint();
+
+  function setMenu(v) {
+    open = v;
+    menu.hidden = !v;
+    icOpen.hidden = v;
+    icClose.hidden = !v;
+    burger.setAttribute('aria-expanded', v ? 'true' : 'false');
+    burger.setAttribute('aria-label', v ? 'Zatvori meni' : 'Otvori meni');
+    paint();
+  }
+  burger.addEventListener('click', function () { setMenu(!open); });
+  menu.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { setMenu(false); });
+  });
+  nav.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && open) { setMenu(false); burger.focus(); }
+  });
+
+  var track = document.getElementById('reels-track');
+  var dots = Array.prototype.slice.call(document.querySelectorAll('.reel-dots .dot'));
+  var rr = 0;
+  if (track) track.addEventListener('scroll', function () {
+    if (rr) return;
+    rr = requestAnimationFrame(function () {
+      rr = 0;
+      var card = track.querySelector('.reel');
+      var step = card ? card.getBoundingClientRect().width + 16 : track.clientWidth * 0.8;
+      var max = track.scrollWidth - track.clientWidth;
+      var i = Math.round(track.scrollLeft / step);
+      if (max > 0 && track.scrollLeft >= max - 4) i = dots.length - 1;
+      i = Math.max(0, Math.min(dots.length - 1, i));
+      dots.forEach(function (d, k) { d.classList.toggle('is-on', k === i); });
+    });
+  }, { passive: true });
+
+  var form = document.querySelector('.frm');
+  var ime = document.getElementById('b-ime');
+  var tel = document.getElementById('b-tel');
+  var errIme = document.querySelector('[data-if="err-ime"]');
+  var errTel = document.querySelector('[data-if="err-tel"]');
+  var sent = document.querySelector('[data-if="sent"]');
+  var btn = form.querySelector('button[type="submit"]');
+
+  function setErr(input, box, id, on) {
+    box.hidden = !on;
+    input.setAttribute('aria-invalid', on ? 'true' : 'false');
+    if (on) input.setAttribute('aria-describedby', id); else input.removeAttribute('aria-describedby');
+  }
+  ime.addEventListener('input', function () { if (!errIme.hidden) setErr(ime, errIme, 'b-ime-err', false); });
+  tel.addEventListener('input', function () { if (!errTel.hidden) setErr(tel, errTel, 'b-tel-err', false); });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var badIme = ime.value.trim().length === 0;
+    var badTel = tel.value.replace(/\D/g, '').length < 6;
+    setErr(ime, errIme, 'b-ime-err', badIme);
+    setErr(tel, errTel, 'b-tel-err', badTel);
+    sent.hidden = true;
+    if (badIme) { ime.focus(); return; }
+    if (badTel) { tel.focus(); return; }
+    // Koncept: upit se nigde ne šalje. Ovde ide pravo slanje.
+    btn.disabled = true;
+    btn.setAttribute('aria-busy', 'true');
+    btn.textContent = 'Šalje se…';
+    setTimeout(function () {
+      btn.disabled = false;
+      btn.setAttribute('aria-busy', 'false');
+      btn.textContent = 'Pošaljite upit';
+      sent.hidden = false;
+    }, 900);
+  });
+})();
+</script>
+
+</body>
+</html>
